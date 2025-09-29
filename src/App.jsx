@@ -114,7 +114,9 @@ export default function App() {
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    fetch("/words.txt")
+    // Use Vite's BASE_URL so the app can be served from a subpath (GitHub Pages)
+    const wordsUrl = import.meta.env.BASE_URL + "words.txt";
+    fetch(wordsUrl)
       .then((r) => r.text())
       .then((text) => {
         const arr = text
@@ -331,7 +333,7 @@ export default function App() {
       <footer className="footer">
         <div>
           Entropy computed over the candidate set. Data loaded
-          from <code>/words.txt</code>.
+          from <code>{import.meta.env.BASE_URL + "words.txt"}</code>.
         </div>
         <div className="muted">
           Created by Griffin Volquartsen
