@@ -3,9 +3,9 @@ import React, { useEffect, useState, useMemo } from "react";
 import "./index.css";
 
 const Result = {
-  CORRECT: "CORRECT",
-  PRESENT: "PRESENT",
-  ABSENT: "ABSENT",
+  CORRECT: "Correct",
+  PRESENT: "Present",
+  ABSENT: "Absent",
 };
 
 // Return feedback array for a guess vs the actual answer using Wordle rules.
